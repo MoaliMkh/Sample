@@ -1,3 +1,4 @@
+import com.sun.management.DiagnosticCommandMBean;
 import java.util.Scanner;
 
 public class Main {
@@ -25,6 +26,19 @@ public class Main {
             else if (input.startsWith("Show Professors")) {
                 for (Professor professor : Professor.professors) {
                     System.out.println(professor);
+                }
+            }
+            else if(input.startsWith("ArrayListExample")){
+                ArrayListExample arrayListExample = new ArrayListExample();
+                String command = new String();
+                for(int i = 0;i < arrayListExample.numberOfLoops + 1;i++)
+                {
+                    command = arrayListExample.scanner.nextLine().trim();
+                    ArrayListExample.stringArr.add(command);
+                }
+                for(int i = 0;i < arrayListExample.numberOfLoops + 1;i++)
+                {
+                    System.out.println(ArrayListExample.stringArr.get(i));
                 }
             }
         }
